@@ -1,0 +1,35 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.ctas {
+  margin-top: 20px;
+}
+
+.ctas a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.ctas .primary {
+  background-color: #0070f3;
+}
+
+.ctas .secondary {
+  background-color: #eaeaea;
+  color: #000;
+}
+
+
