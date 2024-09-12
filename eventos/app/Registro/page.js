@@ -1,19 +1,25 @@
+import styles from "./styles.module.css";
+
 const Registro = () => {
   return (
-    <>
-      <main>
-        <h1>Registrar usuario</h1>
-        <form>
-          <label htmlFor="name">Nombre:</label>
-          <input type="text" id="name" name="name" required />
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-          <label htmlFor="password">Contraseña:</label>
-          <input type="password" id="password" name="password" required />
-          <button type="submit">Registrar</button>
-        </form>
-      </main>
-    </>
+        <div className={styles.card}>
+          <h1>Nuevo aqui?</h1>
+          <form>
+            <div className={styles.input}>
+              <label htmlFor="name">Nombre</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div className={styles.input}>
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" autocorrect="off" name="email" required />
+            </div>
+            <div className={styles.input}>
+              <label htmlFor="password">Contraseña</label>
+              <input type="password" id="password" name="password" required />
+            </div>
+            <button type="submit" className={styles.button}>Registrarme</button>
+          </form>
+        </div>
   );
 };
 

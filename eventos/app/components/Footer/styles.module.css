@@ -1,0 +1,7 @@
+.footer {
+    background-color: #ffc2f1;
+    min-height: 3rem;
+    position: fixed;   /*always stay where I put you on the screen */
+    bottom: 0;  /* I'm putting you at the bottom with no space in between */
+    width: 100%;  /* fill the width of your containing element (body) */
+}

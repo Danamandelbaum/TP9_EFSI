@@ -1,7 +1,7 @@
 export default function Login() {
     return (
-      <div className={styles.page}>
-        <main className={styles.main}>
+      <div>
+        <main >
           <h1>Iniciar sesión</h1>
           <form>
             <label htmlFor="email">Email:</label>
