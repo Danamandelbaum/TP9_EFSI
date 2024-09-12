@@ -1,9 +1,10 @@
 import styles from "./styles.module.css";
+import Link from "next/link";
 
 const Registro = () => {
   return (
         <div className={styles.card}>
-          <h1>Nuevo aqui?</h1>
+          <h1 className={styles.title}>¿Primera vez aca?</h1>
           <form>
             <div className={styles.input}>
               <label htmlFor="name">Nombre</label>
@@ -19,6 +20,7 @@ const Registro = () => {
             </div>
             <button type="submit" className={styles.button}>Registrarme</button>
           </form>
+          <Link href="./Login" className={styles.link}>Ya tengo cuenta</Link>
         </div>
   );
 };

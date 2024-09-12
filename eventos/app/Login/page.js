@@ -1,16 +1,24 @@
-export default function Login() {
-    return (
-      <div>
-        <main >
-          <h1>Iniciar sesión</h1>
+import styles from "./../Registro/styles.module.css";
+import Link from "next/link";
+
+const Login = () => {
+  return (
+        <div className={styles.card}>
+          <h1 className={styles.title}>¡Hola otra vez!</h1>
           <form>
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-            <label htmlFor="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required />
-            <button type="submit">Entrar</button>
+            <div className={styles.input}>
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" autocorrect="off" name="email" required />
+            </div>
+            <div className={styles.input}>
+              <label htmlFor="password">Contraseña</label>
+              <input type="password" id="password" name="password" required />
+            </div>
+            <button type="submit" className={styles.button}>Iniciar Sesion</button>
           </form>
-        </main>
-      </div>
-    );
-  }
+          <Link href="./Registro" className={styles.link}>Soy nuevo aquí</Link>
+        </div>
+  );
+};
+
+export default Login;

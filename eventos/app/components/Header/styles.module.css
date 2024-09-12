@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: .5rem 2rem;
     background-color: #f8f9fa;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -12,15 +12,20 @@
     height: auto;
   }
   
+
+.logo {
+  margin-left: .5rem;
+}
+
   .navigation {
     display: flex;
-    gap: 15px;
+    gap: 3rem;
   }
   
   .navigation a {
     text-decoration: none;
     color: #0070f3;
-    font-size: 16px;
+    font-size: .85rem;
   }
   
   .navigation a:hover {

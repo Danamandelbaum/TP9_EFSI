@@ -1,16 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './styles.module.css';
+import Logo from "../../assets/Img/logo.png"
 
 const Header = ({ user }) => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
         <Image
-          src="/images/logo.png"
+          src={Logo}
           alt="Logo"
-          width={100}
-          height={50}
+          width={25}
+          height={25}
         />
       </div>
       <nav className={styles.navigation}>
