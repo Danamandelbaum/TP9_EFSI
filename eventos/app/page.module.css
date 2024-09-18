@@ -37,4 +37,22 @@
   color: #000;
 }
 
+.bannerContainer {
+  position: relative;
+  width: 100vw;
+  height: 40rem;
+}
 
+.banner {
+  left: 50;
+}
+
+.textBanner {
+  display: flex;
+  position: relative;
+  color: white;
+  height: inherit;
+  padding: 8rem;
+  flex-direction: column;
+  align-items: flex-start;
+}
