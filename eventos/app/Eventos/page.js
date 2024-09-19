@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import './styles.module.css'; 
 import ListarEvento from '../components/ListarEvento';
+import Titulo from '../components/Title';
 
 const Eventos = () => {
   const [eventos, setEventos] = useState([]);
@@ -24,7 +25,7 @@ const Eventos = () => {
 
   return (
     <main className="eventos-container">
-      <h1 className="titulo">Listado de Eventos</h1>
+      <Titulo value={"Listado de eventos"} />
       {
         eventos.map(e => (
           <ListarEvento

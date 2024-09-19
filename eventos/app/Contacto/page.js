@@ -1,25 +1,38 @@
 import styles from './styles.module.css'; 
-import Ubicacion from '../assets/Img/Ubicacion.png'
+import Ubicacion from '../assets/Img/Ubicacion.png';
+import Telefono from '../assets/Img/Telefono.png'; 
+import Email from '../assets/Img/Email.png'; 
+import Localizacion from '../assets/Img/Localizacion.png';
 import Image from 'next/image';
+import Titulo from '../components/Title';
 
 const Contacto = () => {
-  const IMG_SIZE = 500;
   return (
-    <div>
-        <h1 className={styles.title}>Contacto</h1>
-        <p className={styles.info}>Información de contacto:</p>
-        <div className={styles.container}>
-          <address className={styles.address}>
-            <p>Dirección: Yatay 240</p>
-            <p>Teléfono: 123-456-7890</p>
-            <p>Email: escuela@ort.com</p>
-          </address>
-          <Image 
-            src={Ubicacion}
-            width={IMG_SIZE}
-            height={IMG_SIZE}
-          />
-        </div>
+    <div className = {styles.Titulo}>
+       <Titulo value={ "Contacto"}/>
+      <div className={styles.container}>
+        <address className={styles.address}>
+          <div className={styles.contactitem}>
+            <Image src={Localizacion} className={styles.icon} width={28} height={28} alt="Ubicación" />
+            <span>Dirección: Yatay 240</span>
+          </div>
+          <div className={styles.contactitem}>
+            <Image src={Telefono} className={styles.icon} width={28} height={28} alt="Teléfono" />
+            <span>Teléfono: 123-456-7890</span>
+          </div>
+          <div className={styles.contactitem}>
+            <Image src={Email} className={styles.icon} width={28} height={28} alt="Email" />
+            <span>Email: escuela@ort.com</span>
+          </div>
+        </address>
+        <Image 
+          src={Ubicacion}
+          className={styles.map}
+          width={500} 
+          height={300}
+          alt="Mapa de ubicación"
+        />
+      </div>
     </div>
   );
 };

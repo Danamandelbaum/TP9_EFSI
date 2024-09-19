@@ -8,8 +8,7 @@ import Subtitulo from './components/Subtitle';
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        
+      <main className={styles.indexMain}>
       <div className={styles.bannerContainer}> 
           <Image src={Banner} className={styles.banner} layout="fill" objectFit="cover"/>
           <div className={styles.textBanner}>
