@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "./components/Header";
+import Header from "./components/HeaderWOLogin";
+import LoginHeader from "./components/HeaderLogin"
 import Footer from "./components/Footer";
 import styles from "./page.module.css";
 
@@ -24,7 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${styles.body}`}>
-        <Header></Header>
+        {<Header></Header>}
         <main className={styles.main}>
           {children}
           <Footer></Footer>
