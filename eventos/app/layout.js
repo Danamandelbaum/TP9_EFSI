@@ -4,6 +4,8 @@ import Header from "./components/HeaderWOLogin";
 import LoginHeader from "./components/HeaderLogin"
 import Footer from "./components/Footer";
 import styles from "./page.module.css";
+import TokenProvider, { TokenContext } from "./context/TokenContext";
+import { useContext } from "react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,14 +24,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const {isLoggedIn} = useContext(TokenContext);
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${styles.body}`}>
-        {<Header></Header>}
-        <main className={styles.main}>
-          {children}
-          <Footer></Footer>
-        </main>
+        <TokenProvider>
+          { (isLoggedIn == true) ? <Header></Header> : <LoginHeader></LoginHeader>}
+          <main className={styles.main}>
+            {children}
+            <Footer></Footer>
+          </main>
+        </TokenProvider>
       </body>
     </html>
   );
