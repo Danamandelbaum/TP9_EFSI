@@ -8,6 +8,7 @@ import Boton from './components/Boton';
 import Titulo from './components/Title';
 import Subtitulo from './components/Subtitle';
 import { useState } from 'react';
+
 export default function Home() {
   return (
     <div className={styles.page}>

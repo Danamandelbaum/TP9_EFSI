@@ -1,6 +1,6 @@
 "use client";
-
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './styles.module.css'; 
 import ListarEvento from '../components/ListarEvento';
 import Titulo from '../components/Title';
@@ -9,18 +9,14 @@ const Eventos = () => {
   const [eventos, setEventos] = useState([]);
 
   useEffect(() => {
-    setEventos([
-      {
-        nombre: 'Deportes',
-        precio: 434,
-        duration: 45454,
-      },
-      {
-        nombre: 'Amiguismo',
-        precio: 434,
-        duration: 45454,
-      }
-    ]);
+    // Hacemos la llamada a la API
+    axios.get('http://localhost:3000/eventos')
+      .then(response => {
+        setEventos(response.data);
+      })
+      .catch(error => {
+        console.error('Hubo un error al obtener los eventos:', error);
+      });
   }, []);
 
   return (
@@ -29,7 +25,7 @@ const Eventos = () => {
       {
         eventos.map(e => (
           <ListarEvento
-            key={e.nombre} 
+            key={e.id} 
             nombre={e.nombre}
             precio={e.precio}
           />
