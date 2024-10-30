@@ -8,7 +8,7 @@ export const ProtectedRoutes = ({ children }) => {
   const router = useRouter();
   const { isLoggedIn } = useContext(TokenContext);
 
-  if (!isLoggedIn && router.pathname !== "/Login" && router.pathname !== "/Registro" && router.pathname !== "/Contacto") {
+  if (!isLoggedIn && router.pathname == "/Login" && router.pathname == "/Registro" && router.pathname == "/Contacto") {
     return (<h2>Acceso Restringido</h2>);
   }
 
