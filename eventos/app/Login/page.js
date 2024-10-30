@@ -13,13 +13,25 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (email === "usuario_valido" && pass === "contraseña_valida") {
-      const token = "token_valido"; 
-      saveToken(token); 
-      window.location.href = "/Home"; 
-    } else {
-      setError("Email o contraseña incorrectas");
-    }
+    (async () => {
+      const rawResponse = await fetch('http://localhost:3000/api/user/login', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({username: email, password: pass})
+      });
+      const content = await rawResponse.json();
+    
+      console.log(content);
+      if(content.success == true){
+        saveToken(content.token); 
+        window.location.href = "/Home";
+      }else{
+        setError(content.message);
+      }
+    })();
   };
 
   return (

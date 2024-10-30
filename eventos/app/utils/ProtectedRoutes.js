@@ -1,14 +1,13 @@
 "use client";
 
 import { TokenContext } from "../context/TokenContext";
-import { useRouter } from "next/navigation";
 import { useContext } from "react";
+import { usePathname } from 'next/navigation'
 
 export const ProtectedRoutes = ({ children }) => {
-  const router = useRouter();
+  const pathname = usePathname();
   const { isLoggedIn } = useContext(TokenContext);
-
-  if (!isLoggedIn && router.pathname !== "/Login" && router.pathname !== "/Registro" && router.pathname !== "/Contacto") {
+  if (!isLoggedIn && pathname !== "/Login" && pathname !== "/Registro" && pathname !== "/Contacto") {
     return (<h2>Acceso Restringido</h2>);
   }
 

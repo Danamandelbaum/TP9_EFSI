@@ -19,7 +19,8 @@
 
   .navigation {
     display: flex;
-    gap: 3rem;
+    gap: 1rem;
+    align-items: center;
   }
   
   .navigation a {

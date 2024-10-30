@@ -3,6 +3,8 @@ import Image from 'next/image';
 import styles from './styles.module.css';
 import Logo from "../../assets/Img/logo.png"
 
+import pfp from "../../assets/Icons/icon_profile.svg"
+
 const Header = ({ user }) => {
   return (
     <header className={styles.header}>
@@ -15,9 +17,9 @@ const Header = ({ user }) => {
         />
       </div>
       <nav className={styles.navigation}>
-        <Link href="/">Home</Link>
-        <Link href="/Eventos">Eventos</Link>
         <Link href="/Contacto">Contacto</Link>
+        <Link href="/Login" ><Image className={styles.myPic} style={{display: 'block'}} src={pfp} 
+        width={25} height={25}/></Link>
       </nav>
       {user && (
         <div className={styles.userInfo}>

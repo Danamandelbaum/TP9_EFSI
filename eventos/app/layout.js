@@ -32,11 +32,11 @@ export default function RootLayout({ children }) {
 function InnerLayout({ children }) {
   const router = useRouter(); 
   const { isLoggedIn } = useContext(TokenContext); 
-
+  console.log(isLoggedIn)
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${styles.body}`}>
-        {isLoggedIn ? <Header /> : <LoginHeader />}
+        {(isLoggedIn == true) ? <LoginHeader/> : <Header />}
         <main className={styles.main}>
           <ProtectedRoutes>
             {children}

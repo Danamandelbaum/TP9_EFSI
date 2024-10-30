@@ -15,6 +15,8 @@ const TokenProvider = ({ children }) => {
     localStorage.setItem('token', newToken);
     setToken(newToken);
   };
+  
+  console.log(!!token);
 
   return (
     <TokenContext.Provider
