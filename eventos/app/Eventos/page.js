@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './styles.module.css';
+import styles from './styles.module.css'; 
 import BotonVerDetalle from '../components/Link';
 import Titulo from '../components/Title';
 
@@ -35,17 +35,17 @@ const Eventos = () => {
   }
 
   return (
-    <main className="eventos-container">
+    <main className={styles.eventosContainer}>
       <Titulo value={"Listado de eventos"} />
-      {
-        eventos.map(e => (
-          <div key={e.id} className="evento">
+      <div className={styles.eventosGrid}>
+        {eventos.map(e => (
+          <div key={e.id} className={styles.evento}>
             <h2>{e.name}</h2>
-            <p>Precio: {e.price}</p>
+            <p>Precio: USD {e.price}</p>
             <BotonVerDetalle id={e.id} />
           </div>
-        ))
-      }
+        ))}
+      </div>
     </main>
   );
 };

@@ -27,7 +27,7 @@ const Login = () => {
       console.log(content);
       if(content.success == true){
         saveToken(content.token); 
-        window.location.href = "/Home";
+        window.location.href = "/";
       }else{
         setError(content.message);
       }

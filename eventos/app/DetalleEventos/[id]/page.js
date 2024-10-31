@@ -1,20 +1,26 @@
-"use client"
+"use client";
 
-import { useParams } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Link from 'next/link'; // Importa Link
 
-const DetalleEventos = () => {
-  const { id } = useParams();
+const DetalleEventos = ({ params }) => {
+  const { id } = params; 
   const [evento, setEvento] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchEvento = async () => {
+      if (!id) {
+        console.log('ID no disponible');
+        setLoading(false);
+        return;
+      }
       try {
         const response = await axios.get(`http://localhost:3000/api/event/${id}`);
-        setEvento(response.data);
+        console.log('Response data:', response.data);
+        setEvento(response.data); 
       } catch (error) {
         const errorMessage = error.response ? error.response.data : 'Error de red';
         setError(`No se pudo cargar el evento: ${errorMessage}`);
@@ -25,6 +31,12 @@ const DetalleEventos = () => {
 
     fetchEvento();
   }, [id]);
+
+  useEffect(() => {
+    if (evento) {
+      console.log('Evento cargado:', evento);
+    }
+  }, [evento]);
 
   if (loading) {
     return <p>Cargando...</p>;
@@ -44,6 +56,12 @@ const DetalleEventos = () => {
       <p>Precio: {evento.price}</p>
       <p>Duración: {evento.duration_in_minutes} minutos</p>
       <p>Descripción: {evento.description}</p>
+      <p>Fecha de inicio: {evento.start_date}</p>
+
+   
+      <Link href="/Eventos">
+        <button className="volver-button">Volver a Eventos</button>
+      </Link>
     </div>
   );
 };

@@ -12,12 +12,14 @@ const TokenProvider = ({ children }) => {
   }, []);
 
   const saveToken = (newToken) => {
-    localStorage.setItem('token', newToken);
+    if (newToken) {
+      localStorage.setItem('token', newToken);
+    } else {
+      localStorage.removeItem('token'); 
+    }
     setToken(newToken);
   };
   
-  console.log(!!token);
-
   return (
     <TokenContext.Provider
       value={{

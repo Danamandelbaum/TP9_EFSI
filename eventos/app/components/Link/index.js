@@ -1,16 +1,17 @@
-
 import React from 'react';
+import Link from 'next/link';
+import styles from './styles.module.css';
 
 const BotonVerDetalle = ({ id }) => {
-  const handleClick = () => {
-    window.location.href = `/Detalle-eventos`; 
-  };
-
   return (
-    <button onClick={handleClick} className="btn-ver-detalle">
-      Ver Detalle
-    </button>
+    <Link href={`/DetalleEventos/${id}`}>
+      <button className={styles.botonVerDetalle}>
+        Ver Detalle
+      </button>
+    </Link>
   );
 };
 
 export default BotonVerDetalle;
+
+
