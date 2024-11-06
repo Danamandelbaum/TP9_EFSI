@@ -1,15 +1,64 @@
 
-.volver-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .volver-button:hover {
-    background-color: #0056b3;
-  }
-  
+.eventoContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.eventoTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.eventoDetails {
+  margin-bottom: 20px;
+}
+
+.eventoDetails p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.eventoDetails strong {
+  font-weight: bold;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #e74c3c; 
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.volverButton {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.volverButton:hover {
+  background-color: #2980b9;
+}

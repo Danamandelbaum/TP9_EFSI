@@ -26,18 +26,18 @@ const Registro = () => {
         })
       });
   
-      
       if (!response.ok) {
         const errorMessage = await response.text(); 
         throw new Error(errorMessage); 
       }
-  
-      const result = await response.text(); 
-      console.log(result);
-  
+
+     
+      console.log("Registro exitoso");
+      window.location.href = "/Login"; 
+
     } catch (error) {
       console.error('Error al registrarse:', error);
-      setError(error.message); 
+      setError(error.message);
     }
   };
 

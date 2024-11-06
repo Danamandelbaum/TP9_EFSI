@@ -1,9 +1,9 @@
 .footer {
     background-color: #cfcfcf;
     min-height: 4rem;
-    position: fixed;   /*always stay where I put you on the screen */
-    bottom: 0;  /* I'm putting you at the bottom with no space in between */
-    width: 100%;  /* fill the width of your containing element (body) */
+    position:fixed;
+    bottom: 0;  
+    width: 100%;  
     color: #fff;
     display: flex;
     justify-content: space-evenly;
