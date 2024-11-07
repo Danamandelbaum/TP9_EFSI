@@ -48,7 +48,7 @@ const Registro = () => {
       <h1 className={styles.title}>¿Primera vez acá?</h1>
       <form onSubmit={handleSubmit}>
         <div className={styles.input}>
-          <label htmlFor="f_name">Nombre</label>
+          <label htmlFor="f_name">Nombre (minimo 3 caracteres)</label>
           <input
             type="text"
             id="f_name"
@@ -70,7 +70,7 @@ const Registro = () => {
           />
         </div>
         <div className={styles.input}>
-          <label htmlFor="password">Contraseña</label>
+          <label htmlFor="password">Contraseña (minimo 3 caracteres)</label>
           <input
             type="password"
             id="password"
