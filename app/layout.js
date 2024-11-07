@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import styles from "./page.module.css";
 import TokenProvider, { TokenContext } from "./context/TokenContext";
 import { ProtectedRoutes } from "./utils/ProtectedRoutes"; 
+import { usePathname } from 'next/navigation';
 import { useRouter } from "next/navigation";
 
 const geistSans = localFont({
@@ -30,13 +31,14 @@ export default function RootLayout({ children }) {
 }
 
 function InnerLayout({ children }) {
+  const pathname = usePathname();
   const router = useRouter(); 
   const { isLoggedIn } = useContext(TokenContext); 
-  console.log(isLoggedIn)
+  console.log(pathname != "/Registro")
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${styles.body}`}>
-        {(isLoggedIn == true) ? <LoginHeader/> : <Header />}
+        {(isLoggedIn == true) ? <LoginHeader/> :  ((pathname != "/Registro") ? <Header/> : "")}
         <main className={styles.main}>
           <ProtectedRoutes>
             {children}

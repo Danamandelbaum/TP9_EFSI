@@ -35,35 +35,41 @@ const Login = () => {
   };
 
   return (
-    <div className={styles.card}>
-      <h1 className={styles.title}>¡Hola otra vez!</h1>
-      <form onSubmit={handleSubmit}>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <div className={styles.input}>
-          <label htmlFor="email">Email</label>
+  <div className={styles.container} style={{justifyContent: 'center'}}>
+    <div className={styles.login}>
+      <h1 className={styles.title} style={{textAlign: 'center'}}>Inicia sesión</h1>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <div className={`${styles.input} ${styles.long}`}>
+          <label htmlFor="email">Correo electrónico</label>
           <input
             type="email"
             id="email"
-            autocorrect="off"
+            autoComplete="off"
             name="email"
+            placeholder="Correo electrónico"
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
-        <div className={styles.input}>
+        <div className={`${styles.input} ${styles.long}`}>
           <label htmlFor="password">Contraseña</label>
           <input
             type="password"
             id="password"
             name="password"
+            placeholder="Contraseña"
+            autoComplete="off"
             onChange={(e) => setPass(e.target.value)}
             required
           />
         </div>
-        <button type="submit" className={styles.button}>Iniciar Sesión</button>
+        <button type="submit" className={`${styles.button} ${styles.long}`}>Iniciar sesion</button>
       </form>
-      <Link href="./Registro" className={styles.link}>Soy nuevo aquí</Link>
+      
+        {error && <p style={{ color: "red" }}>{error}</p>} 
+      <p className={styles.adicion}>¿No tienes cuenta? <Link href="./Registro" className={`${styles.adicion} ${styles.link}`}>Regístrate</Link></p>
     </div>
+  </div>
   );
 };
 

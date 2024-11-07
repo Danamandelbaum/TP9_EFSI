@@ -19,8 +19,10 @@ export default function Home() {
     window.location.reload();  
   };
 
+
   return (
     <div className={styles.page}>
+       
       <main className={styles.indexMain}>
         <div className={styles.bannerContainer}> 
           <div className={styles.oscurecer}>
@@ -41,4 +43,6 @@ export default function Home() {
       </main>
     </div>
   );
+
+  
 }

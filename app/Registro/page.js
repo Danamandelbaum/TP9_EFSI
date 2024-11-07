@@ -9,6 +9,7 @@ const Registro = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [FName, setFName] = useState("");
+  const [LName, setLName] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
@@ -24,7 +25,7 @@ const Registro = () => {
           username: email,
           password: pass,
           first_name: FName,
-          last_name: "xxx"
+          last_name: LName
         })
       });
   
@@ -44,47 +45,67 @@ const Registro = () => {
   };
 
   return (
-    <div className={styles.card}>
-      <h1 className={styles.title}>¿Primera vez acá?</h1>
-      <form onSubmit={handleSubmit}>
-        <div className={styles.input}>
-          <label htmlFor="f_name">Nombre (minimo 3 caracteres)</label>
-          <input
-            type="text"
-            id="f_name"
-            name="f_name"
-            autoComplete="off"
-            onChange={(e) => setFName(e.target.value)}
-            required
-          />
-        </div>
-        <div className={styles.input}>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            autoComplete="off"
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className={styles.input}>
-          <label htmlFor="password">Contraseña (minimo 3 caracteres)</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            autoComplete="off"
-            onChange={(e) => setPass(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit" className={styles.button}>Registrarme</button>
-      </form>
-      
-        {error && <p style={{ color: "red" }}>{error}</p>} 
-      <Link href="./Login" className={styles.link}>Ya tengo cuenta</Link>
+    <div className={styles.container}>
+      <div className={styles.banner}>
+      </div>
+      <div className={styles.registro}>
+        <h1 className={styles.title}>Regístarte</h1>
+        <div className={styles.divisor}></div>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <div className={styles.input}>
+            <label htmlFor="f_name">Nombre</label>
+            <input
+              type="text"
+              id="f_name"
+              name="f_name"
+              autoComplete="off"
+              placeholder="Nombre"
+              onChange={(e) => setFName(e.target.value)}
+              required
+            />
+          </div>
+          <div className={styles.input}>
+            <label htmlFor="l_name">Apellido</label>
+            <input
+              type="text"
+              id="l_name"
+              placeholder="Apellido"
+              name="l_name"
+              autoComplete="off"
+              onChange={(e) => setLName(e.target.value)}
+              required
+            />
+          </div>
+          <div className={`${styles.input} ${styles.long}`}>
+            <label htmlFor="email">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              autoComplete="off"
+              name="email"
+              placeholder="Correo electrónico"
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className={`${styles.input} ${styles.long}`}>
+            <label htmlFor="password">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Contraseña"
+              autoComplete="off"
+              onChange={(e) => setPass(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit" className={`${styles.button} ${styles.long}`}>Registrarme</button>
+        </form>
+        
+          {error && <p style={{ color: "red" }}>{error}</p>} 
+        <p className={styles.adicion}>¿Ya tienes cuenta? <Link href="./Login" className={`${styles.adicion} ${styles.link}`}>Iniciar sesión</Link></p>
+      </div>
     </div>
   );
 };
