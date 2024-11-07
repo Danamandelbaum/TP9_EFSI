@@ -47,7 +47,7 @@ const Registro = () => {
       <form onSubmit={handleSubmit}>
         {error && <p style={{ color: "red" }}>{error}</p>} 
         <div className={styles.input}>
-          <label htmlFor="f_name">Nombre</label>
+          <label htmlFor="f_name">Nombre (minimo 3 caracteres)</label>
           <input
             type="text"
             id="f_name"
@@ -68,7 +68,7 @@ const Registro = () => {
           />
         </div>
         <div className={styles.input}>
-          <label htmlFor="password">Contraseña</label>
+          <label htmlFor="password">Contraseña (minimo 3 caracteres)</label>
           <input
             type="password"
             id="password"

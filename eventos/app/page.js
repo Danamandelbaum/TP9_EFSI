@@ -5,7 +5,6 @@ import { TokenContext } from './context/TokenContext';
 import styles from './page.module.css'; 
 import Image from 'next/image';
 import Banner from './assets/Img/Banner.jpg';
-import Link from 'next/link';
 import Boton from './components/Boton';
 import Titulo from './components/Title';
 import Subtitulo from './components/Subtitle';
@@ -30,11 +29,9 @@ export default function Home() {
             <Subtitulo value={"Reservá, recordá y hace"} />
 
             {isLoggedIn ? (
-              <button onClick={handleLogout}>Cerrar Sesión</button>
+              <Boton value="Cerrar Sesión" type="secundario" onClick={handleLogout} />
             ) : (
-              <Link href="./Login">
-                <button>Iniciar Sesión</button>
-              </Link>
+              <Boton value="Iniciar Sesión" type="principal" href="/Login" />
             )}
           </div>
         </div>
