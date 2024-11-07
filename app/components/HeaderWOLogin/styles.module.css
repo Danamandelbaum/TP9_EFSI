@@ -1,59 +1,45 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: .5rem 2rem;
-    background-color: #f8f9fa;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--background);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
   
-  .logo img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-
-.logo {
-  margin-left: .5rem;
+.signup {
+  background-color: var(--primary);
+  color: var(--fondo);
+  border-radius: 8px;
+  border: 1px solid var(--primary);
+  transition: background-color .5s;
 }
 
-  .navigation {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-  
-  .navigation a {
-    text-decoration: none;
-    color: #0070f3;
-    font-size: .85rem;
-  }
-  
-  .navigation a:hover {
-    text-decoration: underline;
-  }
-  
-  .userInfo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .userInfo span {
-    font-size: 16px;
-  }
-  
-  .userInfo button {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #0070f3;
-    color: #fff;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .userInfo button:hover {
-    background-color: #005bb5;
-  }
+.signup:hover {
+  background-color: var(--fondo);
+  color: var(--primary);
+  transition: background-color 1s;
+}
+
+.login {
+  color: var(--grey);
+  text-decoration-line: underline;
+}
+
+.login:hover {
+  color: var(--fondo);
+}
+
+.generico {
+  color: var(--fondo);
+}
+
+.generico:hover {
+  color: var(--grey);
+}
+
+.nav_elements {
+  padding: 1rem 1.5rem;
+  font-size: .8rem;
+  font-weight: 600;
+}

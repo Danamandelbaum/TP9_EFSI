@@ -16,17 +16,11 @@ const Header = ({ user }) => {
           height={25}
         />
       </div>
-      <nav className={styles.navigation}>
-        <Link href="/Contacto">Contacto</Link>
-        <Link href="/Login" ><Image className={styles.myPic} style={{display: 'block'}} src={pfp} 
-        width={25} height={25}/></Link>
-      </nav>
-      {user && (
-        <div className={styles.userInfo}>
-          <span>Hola, {user.name}</span>
-          <button>Salir</button>
-        </div>
-      )}
+      <Link href="/Contacto" className={`${styles.nav_elements} ${styles.generico}`} style={{fontSize: '1rem'}}>Contáctanos</Link>
+      <div>
+        <Link href="/Login" className={`${styles.login} ${styles.nav_elements}`}>Iniciar Sesion</Link>
+        <Link href="/Registro" className={`${styles.signup} ${styles.nav_elements}`}>Regístrate</Link>
+      </div>
     </header>
   );
 };

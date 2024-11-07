@@ -13,7 +13,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 1rem;
 }
 
 .ctas {
@@ -44,6 +43,13 @@
   height: 40rem;
 }
 
+.oscurecer {
+  filter: brightness(0.5);
+  width: 100vw;
+  height: 40rem;
+  position: absolute;
+}
+
 .banner {
   left: 50;
 }
@@ -55,6 +61,7 @@
   height: inherit;
   padding: 8rem;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 

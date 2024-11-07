@@ -2,10 +2,12 @@
     display: inline-block;
     padding: .8rem 1rem;
     text-decoration: none;
-    color: ff74dc;
+    font-weight: 700;
+    color: var(--fondo);
     border-radius: 5px;
     border-width: 0;
     font-size: 1rem;
+    margin: .5rem 0;
 }
 
 .principal {
@@ -17,6 +19,16 @@
     cursor: pointer;
 }
 
-.secondary {
-    background-color: #ff74dc;
+.secundario {
+    background-color: var(--accent);
+    box-shadow: 0px 0px 40px rgba(241, 203, 73, 0.4);
+    border: 1px solid var(--accent);
+    transition: background-color .5s;
+}
+
+.secundario:hover {
+    background-color: var(--fondo);
+    color: var(--accent);
+    cursor: pointer;
+    transition: background-color .3s;
 }
