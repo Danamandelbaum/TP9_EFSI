@@ -2,6 +2,8 @@
 import styles from "./styles.module.css";
 import { useState } from "react";
 import Link from "next/link";
+import ErrorHelper from "../helpers/error-helper.js";
+const errorHelp = new ErrorHelper();
 
 const Registro = () => {
   const [email, setEmail] = useState("");
@@ -11,11 +13,11 @@ const Registro = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
     try {
       const response = await fetch('http://localhost:3000/api/user/register', {
         method: 'POST',
         headers: {
+          'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -31,13 +33,13 @@ const Registro = () => {
         throw new Error(errorMessage); 
       }
 
-     
       console.log("Registro exitoso");
       window.location.href = "/Login"; 
 
     } catch (error) {
-      console.error('Error al registrarse:', error);
-      setError(error.message);
+      console.error('Error al registrarse: ' + errorHelp.eraseStart("BAD REQUEST: ", error.message)); //eHelper.eraseStart("BAD REQUEST: ", error)
+      let errorM = errorHelp.eraseStart("BAD REQUEST: ", error.message);
+      setError(errorHelp.changeTerms("Nombre", "first_name", errorM));
     }
   };
 
@@ -45,13 +47,13 @@ const Registro = () => {
     <div className={styles.card}>
       <h1 className={styles.title}>¿Primera vez acá?</h1>
       <form onSubmit={handleSubmit}>
-        {error && <p style={{ color: "red" }}>{error}</p>} 
         <div className={styles.input}>
           <label htmlFor="f_name">Nombre</label>
           <input
             type="text"
             id="f_name"
             name="f_name"
+            autoComplete="off"
             onChange={(e) => setFName(e.target.value)}
             required
           />
@@ -61,7 +63,7 @@ const Registro = () => {
           <input
             type="email"
             id="email"
-            autoCorrect="off"
+            autoComplete="off"
             name="email"
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -73,12 +75,15 @@ const Registro = () => {
             type="password"
             id="password"
             name="password"
+            autoComplete="off"
             onChange={(e) => setPass(e.target.value)}
             required
           />
         </div>
         <button type="submit" className={styles.button}>Registrarme</button>
       </form>
+      
+        {error && <p style={{ color: "red" }}>{error}</p>} 
       <Link href="./Login" className={styles.link}>Ya tengo cuenta</Link>
     </div>
   );
