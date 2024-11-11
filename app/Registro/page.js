@@ -45,7 +45,7 @@ const Registro = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{position: 'absolute', inset: '0'}}>
       <div className={styles.banner}>
       </div>
       <div className={styles.registro}>
