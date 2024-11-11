@@ -1,26 +1,26 @@
 .eventosContainer {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: #eaeaea;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding-bottom: 6rem; 
+  margin-top: 2rem;
 }
 
 .eventosGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  margin-top: 2rem;
 }
 
 .evento {
+  display: flex;
   padding: 15px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 12px;
+  height: 13rem;
+  width: 20rem;
   background-color: white;
   transition: box-shadow 0.3s;
-  text-align: center;
+  /* text-align: center; */
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .evento:hover {

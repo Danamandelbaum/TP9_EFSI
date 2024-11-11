@@ -2,10 +2,16 @@ import styles from "./styles.module.css";
 import Link from "next/link";
 
 export default function Boton({ value, type, onClick, href }) {
+
+  const getStyles = () => {
+    return `${styles.btn} ${type === "principal" ? styles.principal : (type == "secundario") ?
+                  styles.secundario : styles.tercero}`
+  }
+
   if (href) {
     return (
       <Link href={href}>
-        <button className={`${styles.btn} ${type === "principal" ? styles.principal : styles.secundario}`}>
+        <button className={getStyles()}>
           {value}
         </button>
       </Link>
@@ -14,7 +20,7 @@ export default function Boton({ value, type, onClick, href }) {
 
   return (
     <button
-      className={`${styles.btn} ${type === "principal" ? styles.principal : styles.secundario}`}
+      className={getStyles()}
       onClick={onClick}
     >
       {value}

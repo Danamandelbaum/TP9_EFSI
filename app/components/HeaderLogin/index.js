@@ -30,11 +30,10 @@ const Header = ({ user }) => {
         />
       </div>
       <nav className={styles.navigation}>
-        <Link href="/">Home</Link>
-        <Link href="/Eventos">Eventos</Link>
-        <Link href="/Contacto">Contacto</Link>
+        <Link href="/" className={`${styles.login} ${styles.nav_elements}`}>Home</Link>
+        <Link href="/Eventos" className={`${styles.login} ${styles.nav_elements}`}>Eventos</Link>
+        <Link href="/Contacto" className={`${styles.login} ${styles.nav_elements}`}>Contacto</Link>
         
-      
         <div className={styles.profile} onClick={toggleDropdown}>
           <Image
             className={styles.myPic}
@@ -44,20 +43,6 @@ const Header = ({ user }) => {
             alt="Perfil"
           />
         </div>
-
-        {isDropdownVisible && (
-          <div className={styles.dropdown}>
-            <span>{user?.name}</span>
-            <Boton 
-              value="Cerrar Sesión" 
-              type="secundario" 
-              onClick={handleLogout} 
-            />
-            
-          </div>
-          
-        
-        )}
       </nav>
     </header>
   );

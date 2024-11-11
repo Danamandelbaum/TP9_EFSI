@@ -4,6 +4,7 @@ import axios from 'axios';
 import styles from './styles.module.css'; 
 import BotonVerDetalle from '../components/Link';
 import Titulo from '../components/Title';
+import Boton from '../components/Boton';
 
 const Eventos = () => {
   const [eventos, setEventos] = useState([]);
@@ -41,8 +42,11 @@ const Eventos = () => {
         {eventos.map(e => (
           <div key={e.id} className={styles.evento}>
             <h2>{e.name}</h2>
-            <p>Precio: USD {e.price}</p>
-            <BotonVerDetalle id={e.id} />
+            <div className={styles.descripcion}>
+              <p>Precio: USD {e.price}</p>
+              <Boton href={`./DetalleEventos/${e.id}`} type={"tercero"} value="Ver detalle"> 
+              </Boton>
+            </div>
           </div>
         ))}
       </div>

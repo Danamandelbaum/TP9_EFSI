@@ -7,15 +7,25 @@
     border-radius: 5px;
     border-width: 0;
     font-size: 1rem;
-    margin: .5rem 0;
 }
 
 .principal {
-    background-color: #0070f3;
+    background-color: var(--primary);
+    width: 100%;
+    border-radius: 8px;
+    border-color: transparent;
+    border: 1px solid var(--primary);
+    padding: 1rem 0;
+    font-weight: 600;
+    color: #272727;
+    font-size: 1rem;
+    transition: color .3s, background-color .5s;
 }
 
 .principal:hover {
-    background-color: #135caf;
+    background-color: var(--fondo);
+    color: var(--primary);
+    transition: background-color .2s;
     cursor: pointer;
 }
 
@@ -29,6 +39,20 @@
 .secundario:hover {
     background-color: var(--fondo);
     color: var(--accent);
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.tercero {
+    background-color: var(--background);
+    border: 1px solid var(--fondo);
+    transition: background-color .5s;
+    width: 100%;
+}
+
+.tercero:hover{ 
+    background-color: var(--fondo);
+    color: var(--background);
     cursor: pointer;
     transition: background-color .3s;
 }

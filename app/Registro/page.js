@@ -102,8 +102,6 @@ const Registro = () => {
           </div>
           <button type="submit" className={`${styles.button} ${styles.long}`}>Registrarme</button>
         </form>
-        
-          {error && <p style={{ color: "red" }}>{error}</p>} 
         <p className={styles.adicion}>¿Ya tienes cuenta? <Link href="./Login" className={`${styles.adicion} ${styles.link}`}>Iniciar sesión</Link></p>
       </div>
     </div>
