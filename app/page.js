@@ -12,12 +12,6 @@ import Subtitulo from './components/Subtitle';
 export default function Home() {
   const { isLoggedIn, saveToken } = useContext(TokenContext);
 
-  const handleLogout = () => {
-    console.log("Botón de Cerrar Sesión presionado");  
-    localStorage.removeItem("token"); 
-    saveToken(null);  
-    window.location.reload();  
-  };
 
 
   return (
@@ -31,10 +25,10 @@ export default function Home() {
           
           <div className={styles.textBanner}>
             <Titulo value={"Acompañandote en cada paso"} />
-            <Subtitulo value={"Reservá, editá, gestioná y mucho más;"} />
+            <Subtitulo value={"Reservá, editá, gestioná y mucho más;"}/>
 
             {isLoggedIn ? (
-              <Boton value="Cerrar Sesión" type="secundario" onClick={handleLogout} />
+              <Boton value="Ver eventos" type="secundario"  href="/Eventos" />
             ) : (
               <Boton value="Creá tu primer evento" type="secundario" href="/Registro" />
             )}

@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import { useState } from "react";
 import Link from "next/link";
 import ErrorHelper from "../helpers/error-helper.js";
+import Boton from "../components/Boton";
 const errorHelp = new ErrorHelper();
 
 const Registro = () => {

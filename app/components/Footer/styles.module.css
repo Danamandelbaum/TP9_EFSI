@@ -8,6 +8,13 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-top: 2rem;
+}
+
+@media screen and (max-height: 100vh) {
+    .footer {
+        position: unset;
+    }
 }
 
 .img {

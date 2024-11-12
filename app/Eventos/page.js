@@ -28,7 +28,12 @@ const Eventos = () => {
   }, []);
 
   if (loading) {
-    return <p>Cargando eventos...</p>;
+    return (
+      <div className={styles.loadingContainer}>
+        <div className={styles.loader}></div>
+        <p className={styles.loaderText}>Cargando eventos</p>
+      </div>
+    );
   }
 
   if (error) {

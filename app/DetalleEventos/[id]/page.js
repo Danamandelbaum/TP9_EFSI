@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Link from 'next/link'; 
 import styles from './styles.module.css'; 
+import Boton from '@/app/components/Boton';
 
 const DetalleEventos = ({ params }) => {
   const { id } = params; 
@@ -45,7 +46,10 @@ const DetalleEventos = ({ params }) => {
   }, [evento]);
 
   if (loading) {
-    return <p className={styles.loading}>Cargando...</p>;
+    return (<div className={styles.loadingContainer}>
+    <div className={styles.loader}></div>
+    <p className={styles.loaderText}>Cargando evento</p>
+  </div>);
   }
 
   if (error) {
@@ -66,11 +70,8 @@ const DetalleEventos = ({ params }) => {
         <p><strong>Fecha de inicio:</strong> {evento.start_date}</p>
       </div>
 
-      <div className={styles.buttonContainer}>
-        <Link href="/Eventos">
-          <button className={styles.volverButton}>Volver a Eventos</button>
-        </Link>
-      </div>
+      <Boton href={`../Eventos`} type={"tercero"} value="Volver a eventos"> 
+              </Boton>
     </div>
   );
 };

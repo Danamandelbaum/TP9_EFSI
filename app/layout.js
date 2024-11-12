@@ -43,8 +43,8 @@ function InnerLayout({ children }) {
           <ProtectedRoutes>
             {children}
           </ProtectedRoutes>
-          <Footer />
         </main>
+       {(pathname != "/Registro") ? <Footer/> : ""}
       </body>
     </html>
   );

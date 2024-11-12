@@ -8,8 +8,8 @@ import Titulo from '../components/Title';
 
 const Contacto = () => {
   return (
-    <div className = {styles.Titulo}>
-       <Titulo value={ "Contacto"}/>
+    <div className = {styles.contactoContainer}>
+      <Titulo value={ "Contacto"}/>
       <div className={styles.container}>
         <address className={styles.address}>
           <div className={styles.contactitem}>

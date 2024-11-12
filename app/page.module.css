@@ -10,10 +10,12 @@
 
 .main {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  width: inherit;
 }
+
 
 .ctas {
   margin-top: 20px;
