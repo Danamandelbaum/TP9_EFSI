@@ -30,7 +30,7 @@ export default function Home() {
             {isLoggedIn ? (
               <Boton value="Ver eventos" type="secundario"  href="/Eventos" />
             ) : (
-              <Boton value="Creá tu primer evento" type="secundario" href="/Registro" />
+              <Boton value="Ver eventos" type="secundario" href="/Login" />
             )}
           </div>
         </div>
